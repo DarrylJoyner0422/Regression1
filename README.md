@@ -178,16 +178,13 @@ I will plot the degrees of the polynomial against the  𝑅2  scores to visualis
 The function will return a 3-tuple with the degree values in this order: (Underfitting, Overfitting, Good_Generalization) 
 
 
-<img src="https://FILLLLLLLLL" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.postimg.cc/Pf0FH7jn/18.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 
 
 
 
-
-
-
-
+----------------------------3.A
 
 
 
