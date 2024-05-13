@@ -36,7 +36,8 @@ In this project I will build regression and classification models, with and emph
 
 
 
----------------------------Start New ------------------------------------------
+
+<br />
 Load libraries
 <img src="https://i.imgur.com/TXaS04D.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/><br />
 
@@ -183,22 +184,30 @@ The function will return a 3-tuple with the degree values in this order: (Underf
 
 
 
+<br />
+<br />
+Polynomial Fitting With Lasso Regression:  <br/>
 
-----------------------------3.A
+Training models on high-degree polynomial features can result in overly complex models that overfit the training data.
+I considered adding some regularization to constrain the model complexity.<br />
+
+Steps:
+1. Compare the non-regularized LinearRegression model (with the default hyper-parameters), to a new regularised Lasso Regression model (with hyper-parameters alpha=0.01, max_iter=10000) --- on polynomial features of varying degrees.
+2. Observe the difference to see the difference with the polynomials that were fit in task 1.
+
+Function returns predictions for the regularized model. 
+     Generate predictions for 100 evenly spaced points on the interval [0, 20] 
+     Store the results in a numpy array, whose the first row stores the predictions from the model of degree 1, the second row stores the predictions       from the model of degree 3 and so on.
+
+Function returns a numpy array of the shape (4, 100).
 
 
-
-
-
-
-
-
+<img src="https://i.postimg.cc/mD4KnB3B/19.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 
 
 <br />
 <br />
-NEXT PICTURE:  <br/>
 <img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 
@@ -212,15 +221,8 @@ NEXT PICTURE:  <br/>
 
 <br />
 <br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<br/>
+<img src="https://i.postimg.cc/Xq0mT3wn/21.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 
 
@@ -231,239 +233,28 @@ NEXT PICTURE:  <br/>
 
 <br />
 <br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+Lasso Regression vs a 'gold standard' dataset :  <br/>
+Return the  𝑅2 score for each of the Lasso models above relative to a new 'gold standard' test set generated from the true underlying cubic polynomial model without noise. Test is run by computing the true noise-less underlying function t^3/20 - t^2 - t for each of 100 evenly spaced points on the interval [0, 20] . 
 
+For each degree (1, 3, 7, 11), the 𝑅2 score is computed using this 'gold standard' test set and returned the polynomial degree that gives the best fit on the 'gold standard' test set. 
 
+Function returns an integer, in the set (1,3,7,11). 
 
+Question
+Does the optimal polynomial degree match the true polynomial degree?
 
 
 
+<img src="https://i.postimg.cc/wjTZ8gGk/22.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/><br />
 
 
+<img src="https://i.postimg.cc/hGwV41PG/23.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/><br />
 
 
 
 
 
 
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-
-
-
-
-
-
-
-
--------------------------------------End New--------------------------------------------
 
 
 
