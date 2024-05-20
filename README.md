@@ -33,13 +33,9 @@ In this project I will build regression and classification models, with and emph
 
 
 
-
-
-
-
 <br />
-Load libraries
-<img src="https://i.imgur.com/TXaS04D.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/><br />
+Load libraries<br />
+<img src="https://i.imgur.com/TXaS04D.jpeg" height="60%" width="60%" alt="Disk Sanitization Steps"/><br />
 
 
 
@@ -50,7 +46,7 @@ Load libraries
 Raw Data with Noise Generation
 I will first run the following cell to generate and plot the data points used throughout the project.
 
-The independent variable  𝑥  consists of  𝑛 evenly spaced points from the interval  [0,20]
+The independent variable  𝑥  consists of  𝑛 evenly spaced points from the interval  [0,20]<br />
 The dependent variable  𝑦=0.05𝑥3−𝑥2−𝑥+𝐶𝜖 is a function of  𝑥 where  𝜖∼(0,1) represents the standard Gaussian noise and  𝐶   is a constant indicating the noise magnitude.<br />
 
 <img src="https://i.imgur.com/eSZX0J6.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
@@ -62,9 +58,11 @@ The dependent variable  𝑦=0.05𝑥3−𝑥2−𝑥+𝐶𝜖 is a function of 
 <br />
 <br />
 Raw Data Plot :  <br/>
+<br />
 <img src="https://i.imgur.com/On1m4Sh.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 Plot <br />
+<br />
 <img src="https://i.imgur.com/POKmrVP.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 
@@ -73,11 +71,11 @@ Plot <br />
 <br />
 <br />
 Polynomial Features:  <br/>
-I will use polynomial regression to explore the relationship between two variables, \( x \) and \( y \). This is because a simple linear function isn't complex enough to accurately describe their relationship. Instead, I will consider \( y \) as a polynomial function of \( x \), which includes \( x \) raised to various powers (like \( x^2, x^3, \) etc.), each multiplied by different coefficients. 
+I will use polynomial regression to explore the relationship between two variables, \( x \) and \( y \). This is because a simple linear function isn't complex enough to accurately describe their relationship. Instead, I will consider \( y \) as a polynomial function of \( x \), which includes \( x \) raised to various powers (like \( x^2, x^3, \) etc.), each multiplied by different coefficients. <br />
 
 Although \( y \) is a non-linear function of \( x \), it is linear in terms of these powers of \( x \). I can still use linear regression techniques by transforming \( x \) into its higher powers. To create these transformed features, I will use the PolynomialFeatures tool from the scikit-learn library. This approach allows me to model more complex relationships between \( x \) and \( y \) using a technique that still fundamentally relies on linear regression principles.
 
-Steps:
+Steps:<br />
 
 1. Fit Polynomial Models: Write code to fit polynomial expansions of the training data `X_train` for degrees 1, 3, 7, and 11 using a `LinearRegression` model. I will use `PolynomialFeatures` to transform the original `X_train` data by adding new polynomial feature columns for the specified degrees.
 
@@ -93,7 +91,7 @@ These steps are to explore how polynomial features of different degrees fit the 
 
 
 
-Additional Libraries:
+Additional Libraries:<br />
 <img src="https://i.imgur.com/HmHgoEX.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 
@@ -133,6 +131,7 @@ I will visualize the polynomials learned from the training data, along with the 
 <br />
 <br />
 Polynomial Features and Quality of Fit :  <br/>
+<br />
 
 I will create a function that constructs polynomial `LinearRegression` models using the training data `X_train` for the polynomial degrees 1, 3, 7, and 11. After fitting each model, I will calculate the R² (coefficient of determination) score, which assesses the quality of the fit, for both the training and testing data sets.
 
@@ -146,21 +145,23 @@ This function will return a tuple containing two lists: `r2_train` and `r2_test`
 <br />
 <br />
 Solution:  <br/>
+<br />
 <img src="https://i.imgur.com/VbBIZFD.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 
 <br />
 <br />
 KNN Regression:  <br/>
+<br />
 Fit a KNN regression model with the training data and return the  𝑅2   value on the testing data. Use the default hyper-parameters.
 
 This function will return a single float value.
 
 
 <img src="https://i.imgur.com/3KaS4AL.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/><br />
-<img src="https://i.imgur.com/DH0jqxy.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/><br />
+<img src="https://i.imgur.com/DH0jqxy.jpeg" height="60%" width="60%" alt="Disk Sanitization Steps"/><br />
 
-<img src="https://i.imgur.com/L46snKj.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/><br />
+<img src="https://i.imgur.com/L46snKj.jpeg" height="60%" width="60%" alt="Disk Sanitization Steps"/><br />
 
 
 
@@ -168,6 +169,7 @@ This function will return a single float value.
 <br />
 <br />
 Polynomial Model Degree fit: under, over, optimal :  <br/>
+<br />
 
 Based on the  𝑅2  scores from Task 1b, which degree of the polynomial causes the model to be
 
@@ -179,15 +181,12 @@ I will plot the degrees of the polynomial against the  𝑅2  scores to visualis
 The function will return a 3-tuple with the degree values in this order: (Underfitting, Overfitting, Good_Generalization) 
 
 
-<img src="https://i.postimg.cc/Pf0FH7jn/18.jpg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/5p8MqSa.jpeg" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 
 
-
-
-<br />
 <br />
 Polynomial Fitting With Lasso Regression:  <br/>
-
+ <br/>
 Training models on high-degree polynomial features can result in overly complex models that overfit the training data.
 I considered adding some regularization to constrain the model complexity.<br />
 
@@ -206,18 +205,6 @@ Function returns a numpy array of the shape (4, 100).
 
 
 
-<br />
-<br />
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
-
-<br />
-<br />
-NEXT PICTURE:  <br/>
-<img src="https://i.imgur.com/AeZkvFQ.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-
-
 
 <br />
 <br />
@@ -234,10 +221,11 @@ NEXT PICTURE:  <br/>
 <br />
 <br />
 Lasso Regression vs a 'gold standard' dataset :  <br/>
-Return the  𝑅2 score for each of the Lasso models above relative to a new 'gold standard' test set generated from the true underlying cubic polynomial model without noise. Test is run by computing the true noise-less underlying function t^3/20 - t^2 - t for each of 100 evenly spaced points on the interval [0, 20] . 
+ <br/>
+Return the  𝑅2 score for each of the Lasso models above relative to a new 'gold standard' test set generated from the true underlying cubic polynomial model without noise. Test is run by computing the true noise-less underlying function t^3/20 - t^2 - t for each of 100 evenly spaced points on the interval [0, 20] .  <br/>
 
 For each degree (1, 3, 7, 11), the 𝑅2 score is computed using this 'gold standard' test set and returned the polynomial degree that gives the best fit on the 'gold standard' test set. 
-
+ <br/>
 Function returns an integer, in the set (1,3,7,11). 
 
 Question
